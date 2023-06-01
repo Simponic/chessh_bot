@@ -24,7 +24,6 @@ const sendNextMove = (gameId: number, move: string): Promise<BotMoveResponse> =>
     .then((r): BotMoveResponse => {
       const body = r.data as BotMoveResponse;
       if (r.status === 200) {
-        console.log(body);
         return body;
       }
       throw new Error(
@@ -40,18 +39,15 @@ router.post<BotMoveRequest, string>('/move', async (req, res) => {
 
   for (const update of updateMessages) {
     if (update.bot_turn) {
-      console.log(update);
-      const move = aiMove(update.fen);
+      const move = aiMove(update.fen, 3);
 
       const moveFrom = Object.keys(move)[0];
       const moveTo = move[moveFrom];
-      try {
-        await sendNextMove(update.game_id, moveFrom + moveTo);
-      } catch (e) {
-        console.log(e);
-      }
+
+      await sendNextMove(update.game_id, moveFrom + moveTo);
     }
   }
+
   res.status(200).send('OK');
 });
 
