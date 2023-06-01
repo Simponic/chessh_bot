@@ -3,7 +3,7 @@ import {
   BotMoveRequest,
   BotMoveAttempt,
   BotMoveResponse,
-} from '../interfaces/Chessh';
+} from './Chessh';
 import axios from 'axios';
 import { aiMove } from 'js-chess-engine';
 

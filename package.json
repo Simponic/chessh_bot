@@ -7,8 +7,7 @@
     "start": "ts-node src/index.ts",
     "dev": "nodemon src/index.ts",
     "build": "tsc",
-    "lint": "eslint --fix src test",
-    "test": "jest",
+    "lint": "eslint --fix src",
     "vercel-build": "echo hello"
   },
   "keywords": [],

@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  server:
+    container_name: chesshbot
+    restart: always
+    env_file: .env
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 4200:4200

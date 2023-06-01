@@ -12,9 +12,7 @@
   },
   "include": [
     "./*.js",
-    "js-chess-engine.d.ts",
     "api/**/*.ts",
-    "src/**/*.ts",
-    "test/**/*.ts"
+    "src/**/*.ts"
   ]
 }
